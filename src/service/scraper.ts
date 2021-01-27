@@ -16,4 +16,15 @@ export class Scraper {
     const url:string = await page.evaluate('document.querySelector(".cnnBody_Left #needleChart").getAttribute("style")') as string
     return url.substr(22, 101)
   }
+
+  async getMarketBreadth(): Promise<string> {
+    
+    const browser = await launch()
+    const page = await browser.newPage()
+    
+    await page.goto('https://breadth.app/breadth')
+    await page.waitForSelector('div.total___39ZCl');
+
+    return await page.evaluate('document.querySelector("div.total___39ZCl").innerText') as string
+  }
 }

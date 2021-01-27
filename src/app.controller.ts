@@ -18,4 +18,9 @@ export class AppController {
   async getCNNFearAndGreadImgUrl(): Promise<string> {
     return await this.scraper.getCNNFearAndGreedImgUrl();
   }
+
+  @Get('/breadth')
+  async getMarketBreadth(): Promise<string> {
+    return await this.scraper.getMarketBreadth();
+  }
 }
