@@ -14,6 +14,9 @@ export class Scraper {
     await page.waitForSelector('.cnnBody_Left #needleChart');
 
     const url:string = await page.evaluate('document.querySelector(".cnnBody_Left #needleChart").getAttribute("style")') as string
+
+    browser.close();
+
     return url.substr(22, 101)
   }
 
@@ -25,6 +28,9 @@ export class Scraper {
     await page.goto('https://breadth.app/breadth')
     await page.waitForSelector('div.total___39ZCl');
 
-    return await page.evaluate('document.querySelector("div.total___39ZCl").innerText') as string
+    const breadth = await page.evaluate('document.querySelector("div.total___39ZCl").innerText') as string
+    browser.close();
+
+    return breadth;
   }
 }
