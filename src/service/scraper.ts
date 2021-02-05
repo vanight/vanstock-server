@@ -25,12 +25,14 @@ export class Scraper {
     const browser = await launch()
     const page = await browser.newPage()
     
+
+    
     await page.goto('https://breadth.app/breadth')
-    await page.waitForSelector('div.total___39ZCl');
+    await page.waitForSelector('.content___3M2f9 > div > .bizcharts > div > canvas')
 
-    const breadth = await page.evaluate('document.querySelector("div.total___39ZCl").innerText') as string
-    browser.close();
-
-    return breadth;
+    const canvasDataURL = page.evaluate(() => {
+     return (document.querySelector(".content___3M2f9 > div > .bizcharts > div > canvas") as HTMLCanvasElement).toDataURL()
+    })
+    return canvasDataURL;
   }
 }
