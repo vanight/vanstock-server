@@ -2,6 +2,7 @@
 ## Description
 
 
+
 ## Installation
 
 ```bash
@@ -41,13 +42,10 @@ gcloud builds submit --tag gcr.io/vanstock-server/nestjs-server
 gcloud run deploy --image gcr.io/vanstock-server/nestjs-server --platform managed
 ```
 
-## Support
+## Google cloud 
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Install 
+https://cloud.google.com/sdk/docs/downloads-interactive
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
+### NestJS in gcloud
+https://whatdafox.com/deploy-nest-js-on-google-cloud-run/
